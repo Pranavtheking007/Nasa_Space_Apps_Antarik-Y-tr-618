@@ -1,0 +1,57 @@
+#sky {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#shootingstars {
+    margin: 0;
+    padding: 0;
+    width: 150vh;
+    height: 100vw;
+    position: fixed;
+    overflow: hidden;
+    transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%)) rotate(120deg);
+}
+
+.wish {
+    height: 2px;
+    top: 300px;
+    width: 100px;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    background-color: white;
+    position: absolute;
+    background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 6px white);
+    overflow: hidden;
+}
+
+
+.autocomplete-suggestions {
+    border: 1px solid #444444;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+  }
+  
+  .autocomplete-suggestions li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .autocomplete-suggestions li:hover {
+    background-color: #88888850;
+  }
+
+
+  .hidden{
+    display: none !important; /* This hides the input container */
+}
