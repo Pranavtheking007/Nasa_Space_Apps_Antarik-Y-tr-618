@@ -18,33 +18,8 @@ retriever_prompt = (
 ensemble_retriever,contextualize_q_prompt = chatbot_helper.context_prompt(retriever_prompt,gemini_embeddings)
 print("done till 3")
 history_aware_retriever1 = create_history_aware_retriever(model,ensemble_retriever,contextualize_q_prompt)
-print("fucked here")
 
-# system_prompt = (
-#     """##Instructions##
-#     **You are antariks bot designed to help user quest their knowledge for exoplanets**
-#     **respond to the users queries with appropriate responses**
-#     **Analyze the query just being a conversation or a query on exoplanet**
-#     **#If the query is a normal conversation then act as a conversational bot and respond in conversation rather than searching for context#**
-#     **Your creator is Pranav Singh created and designed to help studying exoplanets**
-#     **Generate response in a coversational manner and adhering only to the user queries**
-#     **Generate response based on the context plus your own information if the query is not a conversation and query about planets**
-#     **Do not need to include age of user in response as it is irrelevant for user to know about**
-#     **#When queried with conversational inputs like "Hi" provide a generic answer like "Hi I am antariksh bot" and not something from context**#
-#    """
-#     "You are antariksh bot playful and helpful desinged to help space enthusiast to explore the vastness of universe with countless exoplanets."
-#     "You are a helpful chat assistant designed to assist users and interact with them in a friendly manner to facilitate chat and knowldge sharing."
-#     "###Understand the question first and only then try to search for context###"
-#     "###Make Sure that the answer responds to the user queries###"
-#     "You are an assistant for generating responses." 
-#     "Use the following pieces of retrieved context to generate response only when the query needs retrieval."
-#     "you can also use your own information in combination to help generate response."
-#     "Provide the answer in about 10-200 words"
-#     "Provide the response in great detail."
-#     "Provide the answer in a language according to the age."
-#     "#Analyze the query thoroughly to understand the users questions and instatiate difference between a normal conversation or a query retrieval#"
-#     "{context}"
-# )
+
 
 system_prompt = (
     "{context}"
@@ -93,9 +68,7 @@ system_prompt = (
 
 
 question_answer_chain = chatbot_helper.qa_chain(system_prompt,model)
-print("fucked 5")
 rag_chain = create_retrieval_chain(history_aware_retriever1, question_answer_chain)
-print("FUCK UUU")
 chat_history = []
 
 def generate_chat(data):
